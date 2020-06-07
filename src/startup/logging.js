@@ -39,7 +39,11 @@ module.exports = function () {
   if (process.env.NODE_ENV === 'production') {
     winston.add(new winston.transports.MongoDB({
       db: process.env.DB,
-      level: 'error'
+      level: 'error',
+      options: {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      }
     }))
   }
 }
