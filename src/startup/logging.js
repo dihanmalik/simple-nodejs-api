@@ -38,7 +38,7 @@ module.exports = function () {
 
   if (process.env.NODE_ENV === 'production') {
     winston.add(new winston.transports.MongoDB({
-      db: 'mongodb://localhost/vidly',
+      db: process.env.DB,
       level: 'error'
     }))
   }
