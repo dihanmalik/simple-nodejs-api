@@ -32,15 +32,15 @@ module.exports = function () {
 
   if (process.env.NODE_ENV === 'test') {
     winston.add(new winston.transports.Console({
-      format: winston.format.colorize({ all: true })
+      format: winston.formast.colorize({ all: true })
     }))
   }
 
-  if (process.env.NODE_ENV === 'development') {
-    winston.add(new winston.transports.MongoDB({
-      db: process.env.DB,
-      level: 'error',
-      tryReconnect: true
-    }))
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   winston.add(new winston.transports.MongoDB({
+  //     db: process.env.DB,
+  //     level: 'error',
+  //     tryReconnect: true
+  //   }))
+  // }
 }
