@@ -1,6 +1,6 @@
 const winston = require('winston')
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'development') {
   require('winston-mongodb')
 }
 
@@ -36,7 +36,7 @@ module.exports = function () {
     }))
   }
 
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'development') {
     winston.add(new winston.transports.MongoDB({
       db: process.env.DB,
       level: 'error',
