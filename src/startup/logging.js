@@ -40,11 +40,7 @@ module.exports = function () {
     winston.add(new winston.transports.MongoDB({
       db: process.env.DB,
       level: 'error',
-      tryReconnect: true,
-      options: {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }
+      tryReconnect: true
     }))
   }
 }
